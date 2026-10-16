@@ -1,0 +1,1187 @@
+
+/* =========================================
+   THE SPICE HAVEN — WEBORA STUDIO
+   Main stylesheet
+========================================= */
+
+:root {
+  --cream: #f5f0e7;
+  --cream-dark: #eae1d3;
+  --black: #201e1a;
+  --muted: #777168;
+  --orange: #c96c3b;
+  --white: #fffdf8;
+  --line: #dcd3c5;
+  --serif: "Playfair Display", Georgia, serif;
+  --sans: "DM Sans", Arial, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+body {
+  background: var(--cream);
+  color: var(--black);
+  font-family: var(--sans);
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button,
+select {
+  cursor: pointer;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: 4px;
+}
+
+::selection {
+  background: var(--orange);
+  color: white;
+}
+
+/* TOP ANNOUNCEMENT */
+
+.announcement {
+  padding: 8px 12px;
+  background: var(--black);
+  color: var(--cream);
+  text-align: center;
+  font-size: 10px;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+/* HEADER */
+
+.site-header {
+  min-height: 90px;
+  padding: 18px 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  border-bottom: 1px solid var(--line);
+  background: var(--cream);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.brand-mark {
+  width: 46px;
+  height: 46px;
+  border: 1px solid var(--black);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-family: var(--serif);
+  font-size: 21px;
+  letter-spacing: -2px;
+}
+
+.brand-mark span {
+  color: var(--orange);
+}
+
+.brand-copy {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.3;
+}
+
+.brand-copy strong {
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.brand-copy small {
+  margin-top: 5px;
+  font-size: 8px;
+  letter-spacing: 2px;
+  color: var(--muted);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(15px, 2.5vw, 34px);
+}
+
+.nav a {
+  font-size: 12px;
+  font-weight: 600;
+  transition: color 0.25s ease;
+}
+
+.nav a:hover {
+  color: var(--orange);
+}
+
+.nav .nav-cta {
+  padding: 12px 17px;
+  border: 1px solid var(--black);
+  transition: background 0.25s, color 0.25s;
+}
+
+.nav .nav-cta:hover {
+  background: var(--black);
+  color: var(--white);
+}
+
+.menu-toggle {
+  display: none;
+  border: 0;
+  background: transparent;
+  color: var(--black);
+  font-size: 27px;
+}
+
+/* COMMON LAYOUT */
+
+.section-wrap {
+  width: min(1180px, 86%);
+  margin-inline: auto;
+}
+
+.eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2.4px;
+  color: var(--orange);
+  margin-bottom: 19px;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.15;
+}
+
+h1,
+h2 {
+  font-family: var(--serif);
+  font-weight: 500;
+  letter-spacing: -1.5px;
+}
+
+h1 em,
+h2 em {
+  color: var(--orange);
+  font-weight: 500;
+}
+
+/* BUTTONS */
+
+.button {
+  min-height: 49px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 21px;
+  border: 1px solid transparent;
+  font-size: 12px;
+  font-weight: 700;
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+.button:hover {
+  transform: translateY(-3px);
+}
+
+.button-dark {
+  background: var(--black);
+  color: var(--white);
+}
+
+.button-dark:hover {
+  background: var(--orange);
+}
+
+.button-outline {
+  border-color: var(--black);
+  color: var(--black);
+}
+
+.button-outline:hover {
+  background: var(--black);
+  color: white;
+}
+
+.text-link {
+  display: inline-block;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--orange);
+  font-size: 12px;
+  font-weight: 700;
+  transition: color 0.2s;
+}
+
+.text-link:hover {
+  color: var(--orange);
+}
+
+/* HERO */
+
+.hero {
+  min-height: 590px;
+  padding-top: 66px;
+  padding-bottom: 70px;
+  display: grid;
+  grid-template-columns: 0.92fr 1.08fr;
+  align-items: center;
+  gap: 55px;
+  position: relative;
+}
+
+.hero-copy {
+  padding-bottom: 24px;
+}
+
+.hero h1 {
+  font-size: clamp(46px, 5.1vw, 72px);
+  line-height: 1.08;
+  margin-bottom: 24px;
+}
+
+.hero-text {
+  max-width: 420px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.hero-note {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 39px;
+  font-size: 10px;
+  color: var(--muted);
+}
+
+.note-stars {
+  color: var(--orange);
+  letter-spacing: 3px;
+  font-size: 13px;
+}
+
+.hero-visual {
+  min-height: 440px;
+  position: relative;
+  padding: 0 23px 20px 0;
+}
+
+.hero-img {
+  height: 435px;
+  border-radius: 48% 48% 3px 3px;
+  object-position: center;
+}
+
+.image-label {
+  position: absolute;
+  left: -28px;
+  bottom: 42px;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 15px 20px;
+  background: var(--white);
+  box-shadow: 0 12px 35px #201e1a12;
+}
+
+.label-icon {
+  color: var(--orange);
+  font-size: 28px;
+}
+
+.image-label span:last-child {
+  display: flex;
+  flex-direction: column;
+}
+
+.image-label strong {
+  font-size: 12px;
+}
+
+.image-label small {
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.vertical-note {
+  position: absolute;
+  right: 0;
+  top: 28px;
+  writing-mode: vertical-rl;
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--muted);
+}
+
+.hero-bottom {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  color: var(--muted);
+  font-size: 9px;
+  letter-spacing: 1.5px;
+}
+
+/* INTRO STRIP */
+
+.intro-strip {
+  padding: 22px 6%;
+  background: var(--black);
+  color: var(--cream);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(15px, 4vw, 48px);
+  flex-wrap: wrap;
+}
+
+.intro-strip span {
+  font-size: 9px;
+  letter-spacing: 1.8px;
+  font-weight: 600;
+}
+
+.intro-strip i {
+  color: var(--orange);
+  font-style: normal;
+  font-size: 15px;
+}
+
+/* SECTION HEADINGS */
+
+.menu-section,
+.experience {
+  padding-top: 105px;
+  padding-bottom: 105px;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.section-heading h2,
+.story-copy h2,
+.reservation-copy h2 {
+  font-size: clamp(35px, 4vw, 51px);
+}
+
+.section-heading > p {
+  max-width: 340px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.9;
+  padding-bottom: 5px;
+}
+
+/* MENU FILTERS */
+
+.menu-filters {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+
+.filter {
+  padding: 10px 17px;
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  font-size: 11px;
+  transition: all 0.2s ease;
+}
+
+.filter:hover,
+.filter.active {
+  background: var(--black);
+  color: var(--white);
+  border-color: var(--black);
+}
+
+/* FOOD CARDS */
+
+.food-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.food-card {
+  min-width: 0;
+  transition: transform 0.25s ease;
+}
+
+.food-card:hover {
+  transform: translateY(-5px);
+}
+
+.food-card[hidden] {
+  display: none;
+}
+
+.food-image {
+  height: 235px;
+  position: relative;
+  overflow: hidden;
+  background: var(--cream-dark);
+}
+
+.food-image img {
+  height: 100%;
+  transition: transform 0.5s ease;
+}
+
+.food-card:hover .food-image img {
+  transform: scale(1.06);
+}
+
+.food-tag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: var(--cream);
+  padding: 6px 9px;
+  font-size: 8px;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+.food-info {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  padding-top: 17px;
+}
+
+.food-info h3 {
+  font-family: var(--serif);
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.food-info p {
+  color: var(--muted);
+  font-size: 10px;
+  margin-top: 7px;
+}
+
+.food-info > strong {
+  color: var(--orange);
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.menu-disclaimer {
+  margin-top: 24px;
+  color: var(--muted);
+  font-size: 10px;
+  text-align: center;
+}
+
+.centered {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+}
+
+/* STORY */
+
+.story-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 560px;
+  background: var(--cream-dark);
+}
+
+.story-image {
+  min-height: 560px;
+  position: relative;
+}
+
+.story-image img {
+  height: 100%;
+  position: absolute;
+  inset: 0;
+}
+
+.image-caption {
+  position: absolute;
+  left: 25px;
+  bottom: 25px;
+  background: var(--cream);
+  padding: 12px 17px;
+  font-family: var(--serif);
+  font-size: 14px;
+}
+
+.story-copy {
+  align-self: center;
+  padding: 75px clamp(35px, 8vw, 110px);
+}
+
+.story-copy h2 {
+  margin-bottom: 25px;
+}
+
+.story-copy > p:not(.eyebrow) {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 2;
+  margin-bottom: 17px;
+}
+
+.story-copy .text-link {
+  margin-top: 10px;
+}
+
+.handwritten {
+  margin-top: 34px;
+  color: var(--orange);
+  font-family: var(--serif);
+  font-size: 24px;
+  font-style: italic;
+  line-height: 1.3;
+  transform: rotate(-4deg);
+}
+
+.handwritten span {
+  font-size: 28px;
+}
+
+/* GALLERY */
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr 1fr;
+  gap: 18px;
+}
+
+.gallery-grid img {
+  height: 290px;
+  background: var(--cream-dark);
+  transition: filter 0.3s ease;
+}
+
+.gallery-grid img:hover {
+  filter: brightness(0.85);
+}
+
+.gallery-grid img:first-child {
+  height: 350px;
+}
+
+/* RESERVATION */
+
+.reservation-section {
+  padding: 95px 7%;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: clamp(40px, 8vw, 110px);
+  align-items: start;
+  background: var(--cream-dark);
+}
+
+.reservation-copy {
+  max-width: 450px;
+  padding-top: 22px;
+}
+
+.reservation-copy h2 {
+  margin-bottom: 23px;
+}
+
+.reservation-copy > p:not(.eyebrow) {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.contact-line {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 32px;
+}
+
+.contact-line > span {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  color: var(--orange);
+  font-size: 20px;
+}
+
+.contact-line div {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-line strong {
+  font-size: 12px;
+}
+
+.contact-line small {
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.booking-form {
+  background: var(--white);
+  padding: clamp(24px, 4vw, 43px);
+  box-shadow: 0 15px 40px #201e1a08;
+}
+
+.booking-form h3 {
+  font-family: var(--serif);
+  font-size: 27px;
+  font-weight: 500;
+}
+
+.form-intro {
+  color: var(--muted);
+  font-size: 11px;
+  margin-top: 9px;
+  margin-bottom: 26px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 17px;
+}
+
+.booking-form label {
+  display: block;
+  margin-bottom: 19px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.booking-form input,
+.booking-form select,
+.booking-form textarea {
+  width: 100%;
+  margin-top: 8px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  background: var(--white);
+  color: var(--black);
+  font-size: 12px;
+}
+
+.booking-form input:focus,
+.booking-form select:focus,
+.booking-form textarea:focus {
+  border-color: var(--orange);
+}
+
+.booking-form textarea {
+  resize: vertical;
+  min-height: 85px;
+}
+
+.optional {
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.form-submit {
+  width: 100%;
+  border: 0;
+}
+
+.form-note {
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.7;
+  margin-top: 14px;
+}
+
+.form-status {
+  display: none;
+  margin-top: 15px;
+  padding: 12px;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+.form-status.success {
+  display: block;
+  background: #e8f2e5;
+  color: #285b2b;
+}
+
+.form-status.error {
+  display: block;
+  background: #f8e7e3;
+  color: #8b3024;
+}
+
+/* FOOTER */
+
+.footer {
+  padding: 45px 7% 20px;
+  background: var(--black);
+  color: var(--cream);
+}
+
+.footer-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  padding-bottom: 35px;
+}
+
+.brand-footer .brand-mark {
+  border-color: var(--cream);
+}
+
+.brand-footer .brand-copy small {
+  color: #b5aea4;
+}
+
+.footer-main > p {
+  color: #c0b8ad;
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+.back-top {
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  border-bottom: 1px solid var(--orange);
+  padding-bottom: 6px;
+}
+
+.footer-bottom {
+  border-top: 1px solid #ffffff25;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
+  color: #b5aea4;
+  font-size: 9px;
+}
+
+/* RESPONSIVE TABLET */
+
+@media (max-width: 1000px) {
+  .site-header {
+    padding-inline: 5%;
+  }
+
+  .nav {
+    gap: 15px;
+  }
+
+  .nav a {
+    font-size: 11px;
+  }
+
+  .nav .nav-cta {
+    padding: 10px 12px;
+  }
+
+  .section-wrap {
+    width: 90%;
+  }
+
+  .hero {
+    gap: 30px;
+  }
+
+  .hero-img {
+    height: 390px;
+  }
+
+  .hero-visual {
+    min-height: 395px;
+  }
+
+  .food-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+  }
+
+  .food-image {
+    height: 260px;
+  }
+
+  .story-copy {
+    padding: 55px 40px;
+  }
+
+  .reservation-section {
+    padding-inline: 5%;
+    gap: 35px;
+  }
+}
+
+/* RESPONSIVE MOBILE */
+
+@media (max-width: 700px) {
+  .announcement {
+    font-size: 8px;
+    letter-spacing: 1.2px;
+  }
+
+  .site-header {
+    min-height: 75px;
+    padding: 12px 5%;
+  }
+
+  .brand-mark {
+    width: 40px;
+    height: 40px;
+    font-size: 19px;
+  }
+
+  .brand-copy strong {
+    font-size: 17px;
+  }
+
+  .brand-copy small {
+    font-size: 7px;
+    letter-spacing: 1.3px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    padding: 20px 5% 25px;
+    background: var(--cream);
+    border-bottom: 1px solid var(--line);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .nav.open {
+    display: flex;
+  }
+
+  .nav a {
+    padding: 13px 0;
+    font-size: 13px;
+  }
+
+  .nav .nav-cta {
+    text-align: center;
+    margin-top: 10px;
+    padding: 12px;
+  }
+
+  .section-wrap {
+    width: 90%;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding-top: 52px;
+    padding-bottom: 70px;
+  }
+
+  .hero-copy {
+    padding-bottom: 0;
+  }
+
+  .hero h1 {
+    font-size: clamp(43px, 12vw, 60px);
+  }
+
+  .hero-text {
+    font-size: 13px;
+  }
+
+  .hero-actions {
+    gap: 18px;
+  }
+
+  .hero-note {
+    margin-top: 25px;
+  }
+
+  .hero-visual {
+    min-height: 320px;
+    padding-right: 15px;
+  }
+
+  .hero-img {
+    height: 340px;
+  }
+
+  .image-label {
+    left: -5px;
+    bottom: 30px;
+    padding: 12px 15px;
+  }
+
+  .vertical-note {
+    right: -2px;
+  }
+
+  .hero-bottom {
+    bottom: 20px;
+  }
+
+  .intro-strip {
+    padding: 22px 5%;
+    gap: 12px 18px;
+  }
+
+  .intro-strip span {
+    font-size: 8px;
+  }
+
+  .intro-strip i {
+    font-size: 11px;
+  }
+
+  .menu-section,
+  .experience {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+
+  .section-heading {
+    align-items: start;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 28px;
+  }
+
+  .section-heading h2,
+  .story-copy h2,
+  .reservation-copy h2 {
+    font-size: 38px;
+  }
+
+  .section-heading > p {
+    max-width: 100%;
+  }
+
+  .menu-filters {
+    gap: 8px;
+  }
+
+  .filter {
+    padding: 9px 12px;
+    font-size: 10px;
+  }
+
+  .food-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 25px 13px;
+  }
+
+  .food-image {
+    height: 180px;
+  }
+
+  .food-tag {
+    top: 8px;
+    left: 7px;
+    font-size: 7px;
+  }
+
+  .food-info {
+    gap: 5px;
+    padding-top: 12px;
+  }
+
+  .food-info h3 {
+    font-size: 15px;
+  }
+
+  .food-info p {
+    font-size: 10px;
+  }
+
+  .food-info > strong {
+    font-size: 11px;
+  }
+
+  .story-section {
+    grid-template-columns: 1fr;
+  }
+
+  .story-image {
+    min-height: 330px;
+  }
+
+  .story-copy {
+    padding: 55px 7%;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .gallery-grid img,
+  .gallery-grid img:first-child {
+    height: 190px;
+  }
+
+  .gallery-grid img:first-child {
+    grid-column: 1 / -1;
+    height: 240px;
+  }
+
+  .reservation-section {
+    grid-template-columns: 1fr;
+    padding: 65px 5%;
+    gap: 30px;
+  }
+
+  .reservation-copy {
+    padding-top: 0;
+  }
+
+  .booking-form {
+    padding: 24px 18px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .footer {
+    padding: 35px 5% 20px;
+  }
+
+  .footer-main {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* SMALL PHONES */
+
+@media (max-width: 360px) {
+  .brand-copy strong {
+    font-size: 15px;
+  }
+
+  .hero h1 {
+    font-size: 40px;
+  }
+
+  .food-image {
+    height: 150px;
+  }
+
+  .food-info {
+    flex-direction: column;
+  }
+
+  .food-info > strong {
+    font-size: 13px;
+  }
+
+  .gallery-grid img,
+  .gallery-grid img:first-child {
+    height: 155px;
+  }
+}
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
